@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="This webpage displays analysis showing changes in the weather as we approach the equator">
+        <title>Lattitude: Data Table</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen">
+    </head>
+    <body>
+            <header>
+                <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                          <!-- Brand and toggle get grouped for better mobile display -->
+                          <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="index.html">Lattitude</a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right">
+                                  <li><a href="comparison.html">Comparisons</a></li>
+                                  <li><a href="data.html">Data</a></li>
+                                  <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="temp.html">Max Temperature</a></li>
+                                      <li><a href="humidity.html">Humidity</a></li>
+                                      <li><a href="cloudiness.html">Cloudiness</a></li>
+                                      <li><a href="wind.html">Wind Speed</a></li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                            </div>
+                        </div>
+                </nav> 
+            </header>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+            <script>
+                function arrayToTable(tableData) {
+                    var table = $('<table></table>');
+                    $(tableData).each(function (i, rowData) {
+                        var row = $('<tr></tr>');
+                        $(rowData).each(function (j, cellData) {
+                            row.append($('<td>'+cellData+'</td>'));
+                        });
+                        table.append(row);
+                    });
+                    return table;
+                }
+            
+                $.ajax({
+                    type: "GET",
+                    url: "cities.csv",
+                    success: function (data) {
+                        $('body').append(arrayToTable(Papa.parse(data).data));
+                    }
+                });
+            </script>
+    </body>
+</html>

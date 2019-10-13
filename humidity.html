@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="This webpage displays analysis showing changes in the weather as we approach the equator">
+        <title>Lattitude: Latitude vs. Humidity</title>
+        <link rel="stylesheet" href="CSS/comparison.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen">
+    </head>
+    <body>
+            <header>
+                <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                          <!-- Brand and toggle get grouped for better mobile display -->
+                          <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="index.html">Lattitude</a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right">
+                                  <li><a href="Comparison/comparison.html">Comparisons</a></li>
+                                  <li><a href="Data/data.html">Data</a></li>
+                                  <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="temp.html">Max Temperature</a></li>
+                                      <li><a href="humidity.html">Humidity</a></li>
+                                      <li><a href="cloudiness.html">Cloudiness</a></li>
+                                      <li><a href="wind.html">Wind Speed</a></li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                            </div>
+                        </div>
+                </nav>  
+            </header>
+            <main>
+                    <br/>
+                    <div class="container">
+                            <section class="row">
+                                <article class="description-content">
+                                  <h1 class="description-header">Summary: Latitude vs. Humidity</h1>
+                                  <hr class="description-hr"/>
+                                  <img src="dir/humidityVSlat.png" alt="" id="description-image"/>
+                                  <p>There is no correlation between latitude and humidity.</p>
+                                </article>
+                              </div>
+                            </section>
+                </main>
+                <footer class="footer navbar-fixed-bottom">
+                        <div class="two-toned-footer-color"></div>
+                        <p class="text-muted text-muted-footer text-center">
+                          &copy; Copyright Coding Bootcamp 2017
+                        </p>
+                    </footer>
+                      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+                      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                    </body>
+                  ​
+                  </html>
